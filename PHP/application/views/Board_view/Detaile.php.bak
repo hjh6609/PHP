@@ -1,0 +1,38 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>View</title>
+    </head>
+    <body>
+        <table border="1">
+        <?php 
+            foreach($dtdt as $detailView)
+            {
+        ?>
+                <tr>
+                    <td>Name</td>
+                    <td><?=$detailView->Nname?></td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td><?=$detailView->Ntitle?></td>
+                </tr>
+                <tr>
+                    <td>Date</td>       
+                    <td><?=$detailView->Ndate?></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Content</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea cols="50" rows="10"><?=$detailView->Ncontent?></textarea></td>
+                </tr>
+        <?
+            }
+        ?>   
+        </table>
+        <a href="/index.php/board_controller"><input type="button" value="목록"></a>
+        <a href="/index.php/board_controller/UpdatePost_view/<?=$detailView->Nseq?>"><input type="button" value="수정"></a>
+        <a href="/index.php/board_controller/Delete/<?=$detailView->Nseq?>"><input type="button" value="삭제"></a>
+    </body>
+</html>

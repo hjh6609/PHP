@@ -1,0 +1,41 @@
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "1234";
+
+
+/*
+$username = "your_name";
+$password = "your_password";
+$hostname = "localhost"; 
+ */
+
+
+$connect = mysqli_connect($hostname, $username, $password) or die("MySQL Server 연결에 실패했습니다");
+$result = mysql_select_db($dbname,$connect);
+ 
+if($result) {
+ echo("MySQL Server Connect 성공");
+}
+else {
+ echo("MySQL Server Connect 실패");
+}
+ 
+mysql_close($connect);
+ 
+?>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+?>
